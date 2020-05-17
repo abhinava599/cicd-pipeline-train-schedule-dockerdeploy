@@ -1,30 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@abhinava599 
-abhinava599
-/
-cicd-pipeline-train-schedule-dockerdeploy
-forked from linuxacademy/cicd-pipeline-train-schedule-dockerdeploy
-0
-01.8k
- Code
- Pull requests 0 Actions
- Projects 0
- Wiki
- Security 0
- Insights
- Settings
-cicd-pipeline-train-schedule-dockerdeploy/Jenkinsfile
-@whboyd whboyd implement wait for feedback before Prod deploy
-b71b9a6 on May 9, 2018
-59 lines (59 sloc)  2.25 KB
-  
 pipeline {
     agent any
     stages {
@@ -41,7 +14,7 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("willbla/train-schedule")
+                    app = docker.build("abhinav/train-schedule")
                     app.inside {
                         sh 'echo $(curl localhost:8080)'
                     }
